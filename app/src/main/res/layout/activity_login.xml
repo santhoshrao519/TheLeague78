@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:focusable="false" android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/bg"
+    tools:context=".LoginActivity">
+    <RelativeLayout android:padding="12dp"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView android:layout_gravity="left" android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_back"/>
+
+            <TextView android:text="New User?" android:textSize="16sp" android:id="@+id/register"
+                android:textColor="@color/yellow"  android:fontFamily="@font/robotolight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Footer aligned to bottom -->
+
+    <RelativeLayout android:visibility="gone"
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" >
+
+    </RelativeLayout>
+
+    <!-- Content below header and above footer -->
+
+    <ScrollView
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/footer"
+        android:layout_below="@id/header"
+        android:padding="30dp" >
+
+        <LinearLayout android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:text="Login" android:textSize="24sp"
+                android:textColor="@color/black" android:textStyle="bold"
+                android:layout_width="match_parent"  android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        <ImageView android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/app_logo"/>
+
+            <EditText android:id="@+id/email"
+                android:textColorHint="@color/light_grey" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp"
+                android:layout_height="46dp"  android:fontFamily="@font/robotolight"
+                android:background="@drawable/edittext_bg"
+                android:hint="Enter Phone Number or Email"/>
+
+            <EditText android:id="@+id/password"
+                android:layout_marginTop="16dp" android:paddingLeft="10dp" android:paddingRight="10dp"
+                android:textColorHint="@color/light_grey"  android:fontFamily="@font/robotolight"
+                android:layout_width="match_parent" android:inputType="textPassword"
+                android:layout_height="46dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Enter Password"/>
+            <TextView android:text="Forgot Password?" android:textSize="16sp"
+                android:textColor="@color/yellow" android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"  android:fontFamily="@font/robotolight"
+                android:layout_gravity="end"
+                android:gravity="end"/>
+            <Button     android:stateListAnimator="@null" android:id="@+id/login"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"  android:fontFamily="@font/robotolight"
+                android:layout_height="46dp" android:background="@drawable/signup_btn_bg"
+                android:text="SIGN IN"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
